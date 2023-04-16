@@ -11,6 +11,7 @@ namespace NzbDrone.Common.Http
     {
         private readonly string _userAgentSimplified;
         private readonly string _userAgent;
+        private static Random random = new Random();
 
         public string GetUserAgent(bool simplified)
         {
@@ -33,8 +34,11 @@ namespace NzbDrone.Common.Http
 
             var osVersion = osInfo.Version?.ToLower();
 
-            _userAgent = $"{BuildInfo.AppName}/{BuildInfo.Version} ({osName} {osVersion})";
-            _userAgentSimplified = $"{BuildInfo.AppName}/{BuildInfo.Version.ToString(2)}";
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string AppName = new string(Enumerable.Repeat(chars, 8).Select(s => s[random.Next(s.Length)]).ToArray());
+
+            _userAgent = $"{AppName}/{BuildInfo.Version} ({osName} {osVersion})";
+            _userAgentSimplified = $"{AppName}/{BuildInfo.Version.ToString(2)}";
         }
     }
 }
