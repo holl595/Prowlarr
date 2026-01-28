@@ -1,6 +1,6 @@
 # Stage 1 - build
 FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS build
-ENV PROWLARRVERSION="2.1.0.000"
+ENV PROWLARRVERSION="2.3.0.5236"
 # install bash + node/yarn for frontend build
 RUN apk add --no-cache bash nodejs npm
 
