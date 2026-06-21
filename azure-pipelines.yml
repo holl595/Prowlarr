@@ -9,15 +9,15 @@ variables:
   testsFolder: './_tests'
   yarnCacheFolder: $(Pipeline.Workspace)/.yarn
   nugetCacheFolder: $(Pipeline.Workspace)/.nuget/packages
-  majorVersion: '2.3.2'
+  majorVersion: '2.5.0'
   minorVersion: $[counter('minorVersion', 1)]
   prowlarrVersion: '$(majorVersion).$(minorVersion)'
   buildName: '$(Build.SourceBranchName).$(prowlarrVersion)'
   sentryOrg: 'servarr'
   sentryUrl: 'https://sentry.servarr.com'
-  dotnetVersion: '8.0.405'
+  dotnetVersion: '8.0.421'
   nodeVersion: '20.X'
-  innoVersion: '6.2.2'
+  innoVersion: '6.7.1'
   windowsImage: 'windows-2025'
   linuxImage: 'ubuntu-24.04'
   macImage: 'macOS-15'

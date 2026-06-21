@@ -487,7 +487,7 @@
     "AllSearchResultsHiddenByFilter": "Tots els resultats estan ocults pel filtre aplicat.",
     "HealthMessagesInfoBox": "Podeu trobar més informació sobre la causa d'aquests missatges de comprovació de salut fent clic a l'enllaç wiki (icona del llibre) al final de la fila o consultant els vostres [registres]({link}). Si teniu problemes per a interpretar aquests missatges, podeu posar-vos en contacte amb el nostre suport als enllaços següents.",
     "AptUpdater": "Utilitzeu apt per a instal·lar l'actualització",
-    "DockerUpdater": "actualitzeu el contenidor Docker per a rebre l'actualització",
+    "DockerUpdater": "Actualitzeu el contenidor Docker per actualitzar",
     "Download": "Baixa",
     "ErrorRestoringBackup": "S'ha produït un error en restaurar la còpia de seguretat",
     "ExternalUpdater": "{appName} està configurat per a utilitzar un mecanisme d'actualització extern",
@@ -804,7 +804,7 @@
     "DownloadClientRTorrentSettingsAddStopped": "Afegeix aturat",
     "DownloadClientRTorrentSettingsAddStoppedHelpText": "En activar s'afegiran torrents i imants a rTorrent en un estat aturat. Això pot trencar els fitxers magnet.",
     "DownloadClientFreeboxSettingsAppTokenHelpText": "S'ha recuperat el testimoni de l'aplicació en crear l'accés a l'API de Freebox (ex: 'app_token')",
-    "DownloadClientUTorrentProviderMessage": "uTorrent té un historial d'inclusió de criptominers, programari maliciós i anuncis, us animem a triar un client diferent.",
+    "DownloadClientUTorrentProviderMessage": "uTorrent té historial d'incloure criptominers, malware i anuncis, suggerim fortament que escolleixis un client diferent.",
     "DownloadClientQbittorrentSettingsInitialStateHelpText": "Estat inicial dels torrents afegits a qBittorrent. Tingueu en compte que els torrents forçats no compleixen amb les restriccions de llavors",
     "LogSizeLimit": "Límit de la mida del registre",
     "SelectDownloadClientModalTitle": "{modalTitle} - Seleccioneu el client de baixada"

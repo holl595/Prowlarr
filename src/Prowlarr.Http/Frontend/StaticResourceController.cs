@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
@@ -16,6 +17,7 @@ namespace Prowlarr.Http.Frontend
     {
         private readonly IEnumerable<IMapHttpRequestsToDisk> _requestMappers;
         private readonly Logger _logger;
+        private static readonly Regex InvalidPathRegex = new(@"([\/\\]|%2f|%5c)\.\.|\.\.([\/\\]|%2f|%5c)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         public StaticResourceController(IEnumerable<IMapHttpRequestsToDisk> requestMappers,
             Logger logger)
@@ -50,6 +52,11 @@ namespace Prowlarr.Http.Frontend
         {
             path = "/" + (path ?? "");
 
+            if (InvalidPathRegex.IsMatch(path))
+            {
+                return NotFound();
+            }
+
             var mapper = _requestMappers.SingleOrDefault(m => m.CanHandle(path));
 
             if (mapper != null)
@@ -58,7 +65,7 @@ namespace Prowlarr.Http.Frontend
 
                 if (result != null)
                 {
-                    if (result.ContentType == "text/html")
+                    if ((result as FileResult)?.ContentType == "text/html")
                     {
                         Response.Headers.DisableCache();
                     }
